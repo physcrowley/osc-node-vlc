@@ -1,3 +1,5 @@
+// networking code here : https://raspberrypi-guide.github.io/networking/create-local-network
+
 var osc = require("osc"),
     cmd = require('node-cmd'),
     // Omx = require('node-omxplayer'),
