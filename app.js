@@ -1,7 +1,7 @@
 var osc = require("osc"),
     cmd = require('node-cmd'),
-    Omx = require('node-omxplayer'),
-    omxplayer = Omx();
+    // Omx = require('node-omxplayer'),
+    // omxplayer = Omx();
 
 /****************
  * OSC Over UDP *
@@ -27,7 +27,7 @@ var getIPAddresses = function () {
 
 var udpPort = new osc.UDPPort({
     localAddress: "0.0.0.0",
-    localPort: 57121
+    localPort: 53000
 });
 
 udpPort.on("ready", function () {
@@ -44,19 +44,20 @@ udpPort.on("ready", function () {
 
 udpPort.on("message", function (oscMessage) {
     if(oscMessage.address == '/play') {
-        omxplayer.newSource(oscMessage.args[0], 'hdmi', false, 100);
+        // omxplayer.newSource(oscMessage.args[0], 'hdmi', false, 100);
+        cmd.run('echo play ' + oscMessage.args[0]);
     }
 
     if(oscMessage.address == '/loop') {
-        omxplayer.newSource(oscMessage.args[0], 'hdmi', true, 100);
+        // omxplayer.newSource(oscMessage.args[0], 'hdmi', true, 100);
     }
 
-    if(oscMessage.address == '/pause' && omxplayer.running) {
-        omxplayer.pause();
+    if(oscMessage.address == '/pause') { // && omxplayer.running) {
+        // omxplayer.pause();
     }
 
-    if(oscMessage.address == '/stop' && omxplayer.running) {
-        omxplayer.quit();
+    if(oscMessage.address == '/stop' ) { // && omxplayer.running) {
+        // omxplayer.quit();
     }
 
     if(oscMessage.address == '/cmd') {
