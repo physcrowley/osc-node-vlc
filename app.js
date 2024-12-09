@@ -1,4 +1,5 @@
-// networking code here : https://raspberrypi-guide.github.io/networking/create-local-network
+// networking code here : https://raspberrypi-guide.github.io/networking/create-local-network (OUTDATED)
+// pi cluster tutorial here : https://www.raspberrypi.com/tutorials/cluster-raspberry-pi-tutorial/ 
 
 var osc = require("osc"),
     cmd = require('node-cmd'),
