@@ -1,5 +1,8 @@
 #!/bin/bash
 
+echo "DO NOT RUN - Obsolete and broken code"
+exit 0
+
 ## Install AFP
 
 sudo apt-get install -y netatalk
