@@ -1,0 +1,1 @@
+vlc -f -d --one-instance --qt-minimal-view --no-qt-bgcone --no-video-title-show --no-audio --no-osd --play-and-pause --start-paused
